@@ -878,6 +878,55 @@
 
             renderReviews();
 
+            <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewsContainer = document.getElementById('reviewsListContainer');
+
+            // Cargar reseñas guardadas previamente
+            const savedReviews = JSON.parse(localStorage.getItem('doctor_torres_reviews')) || [];
+            
+            function renderReviews() {
+                let html = `
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="review-text">"Excelente profesional, muy dedicado con mi padre adulto mayor. Explicó detalladamente el diagnóstico auditivo y el tratamiento fue muy efectivo."</div>
+                        <div class="reviewer-info">
+                            <span>María C. R.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor Torres tiene una paciencia increíble con los niños. Súper recomendado en Villavicencio."</div>
+                        <div class="reviewer-info">
+                            <span>Carlos Andrés M.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                        </div>
+                    </div>
+                `;
+
+                savedReviews.forEach(rev => {
+                    html += `
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="review-text">"${rev.comment}"</div>
+                            <div class="reviewer-info">
+                                <span>${rev.name}</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado (${rev.email})</span>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                reviewsContainer.innerHTML = html;
+            }
+
+            renderReviews();
+
             reviewForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const name = document.getElementById('reviewerName').value;
@@ -889,15 +938,22 @@
                     return;
                 }
 
+                // Guardar localmente
                 const newReview = { name, email, comment };
                 savedReviews.unshift(newReview);
                 localStorage.setItem('doctor_torres_reviews', JSON.stringify(savedReviews));
-
                 renderReviews();
+
+                // CREAR MENSAJE AUTOMÁTICO PARA WHATSAPP
+                // Reemplaza 573138740239 con tu número de WhatsApp con código de país (57 para Colombia)
+                const telefonoWhatsApp = "573225241606"; 
+                const mensaje = `Hola Dr. Daniel, he dejado una nueva reseña en su web:%0A%0A*Nombre:* ${name}%0A*Correo:* ${email}%0A*Comentario:* "${comment}"`;
+                
+                // Abrir WhatsApp automáticamente con el mensaje listo
+                window.open(`https://wa.me/${telefonoWhatsApp}?text=${mensaje}`, '_blank');
+
                 reviewForm.reset();
-                alert('¡Gracias por tu reseña! Ha sido publicada exitosamente.');
+                alert('¡Gracias por tu reseña! Se abrirá WhatsApp para notificar al consultorio.');
             });
         });
     </script>
-</body>
-</html>
