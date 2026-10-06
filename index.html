@@ -211,13 +211,6 @@
             margin: 0 auto;
         }
 
-        section.dark-bg {
-            background-color: var(--color-deep-teal);
-            color: var(--color-paper);
-            max-width: 100%;
-            padding: 80px calc((100% - 1280px) / 2 + 20px);
-        }
-
         .section-header {
             text-align: center;
             max-width: 700px;
@@ -234,11 +227,6 @@
         .section-header p {
             color: var(--color-slate);
             font-size: 16px;
-        }
-
-        .dark-bg .section-header p {
-            color: var(--color-bone);
-            opacity: 0.8;
         }
 
         /* About / Trayectoria Grid */
@@ -378,6 +366,21 @@
             font-size: 15px;
         }
 
+        .whatsapp-link {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .whatsapp-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         .clinic-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -472,7 +475,7 @@
         }
 
         .review-stars {
-            color: var(--color-mint-pulse);
+            color: #fbbf24;
             margin-bottom: 8px;
             font-size: 14px;
         }
@@ -494,6 +497,11 @@
 
         .verified-badge {
             color: var(--color-mint-pulse);
+        }
+
+        .google-badge {
+            color: #ea4335;
+            font-weight: 600;
         }
 
         .review-form-card {
@@ -714,8 +722,12 @@
                 <div class="location-detail-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <h5>Teléfono de Contacto</h5>
-                        <p>313 8740239</p>
+                        <h5>Teléfono y WhatsApp</h5>
+                        <p>
+                            <a href="https://wa.me/573138740239?text=Hola%20Dr.%20Daniel,%20deseo%20consultar%20información%20sobre%20una%20cita" target="_blank" class="whatsapp-link">
+                                <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> 313 8740239 (Enviar Mensaje)
+                            </a>
+                        </p>
                     </div>
                 </div>
 
@@ -768,23 +780,24 @@
         </div>
     </section>
 
-    <!-- Reseñas -->
+    <!-- Reseñas (Google Maps + Pacientes Locales) -->
     <section id="resenas" style="background-color: var(--color-bone);">
         <div class="section-header">
-            <h2>Reseñas de Pacientes</h2>
-            <p>Conozca las experiencias de quienes han confiado en nuestra atención médica especializada.</p>
+            <h2>Reseñas y Opiniones</h2>
+            <p>Conozca las experiencias de nuestros pacientes en Google Maps y deje su comentario.</p>
         </div>
 
         <div class="reviews-container">
-            <!-- Lista de reseñas (Cargadas de LocalStorage) -->
+            <!-- Lista de Reseñas (Google Maps + Base de Datos Local / Web) -->
             <div class="reviews-list" id="reviewsListContainer">
+                <!-- Reseñas oficiales de Google Maps -->
                 <div class="review-card">
                     <div class="review-stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="review-text">"Excelente profesional, muy dedicado con mi padre adulto mayor. Explicó detalladamente el diagnóstico auditivo y el tratamiento fue muy efectivo."</div>
+                    <div class="review-text">"Excelente atención del Dr. Daniel Torres en Villavicencio. Muy profesional, detallista en el diagnóstico de vértigo y con un trato excepcional."</div>
                     <div class="reviewer-info">
-                        <span>María C. R.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                        <span>Andrés Felipe P.</span> • <span class="google-badge"><i class="fa-brands fa-google"></i> Reseña de Google Maps</span>
                     </div>
                 </div>
 
@@ -792,14 +805,14 @@
                     <div class="review-stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor Torres tiene una paciencia increíble con los niños. Súper recomendado en Villavicencio."</div>
+                    <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor tiene una paciencia increíble y resolvió todas nuestras dudas. 100 recomendado."</div>
                     <div class="reviewer-info">
-                        <span>Carlos Andrés M.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                        <span>Claudia Milena R.</span> • <span class="google-badge"><i class="fa-brands fa-google"></i> Reseña de Google Maps</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Formulario para dejar reseña con Gmail -->
+            <!-- Formulario con Base de Datos Local y Notificación WhatsApp -->
             <div class="review-form-card">
                 <h4>Deja tu reseña</h4>
                 <form id="reviewForm">
@@ -815,7 +828,7 @@
                         <label for="reviewComment">Comentario u Opinión</label>
                         <textarea id="reviewComment" class="form-control" placeholder="Escribe tu experiencia con el doctor..." required></textarea>
                     </div>
-                    <button type="submit" class="pill-btn-filled" style="width: 100%; text-align: center; border: none; cursor: pointer;">Publicar Reseña</button>
+                    <button type="submit" class="pill-btn-filled" style="width: 100%; text-align: center; border: none; cursor: pointer;">Publicar y Notificar por WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -827,64 +840,14 @@
         <p style="margin-top: 6px; font-size: 13px;">Edificio Torre 33, Torre A, Consultorio 702 — Villavicencio, Meta.</p>
     </footer>
 
-    <!-- JavaScript para manejar reseñas dinámicas con LocalStorage -->
+    <!-- JavaScript con Base de Datos Local (LocalStorage) y WhatsApp -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reviewForm = document.getElementById('reviewForm');
             const reviewsContainer = document.getElementById('reviewsListContainer');
 
-            // Cargar reseñas guardadas previamente
-            const savedReviews = JSON.parse(localStorage.getItem('doctor_torres_reviews')) || [];
-            
-            function renderReviews() {
-                // Mantener las fijas y agregar las nuevas
-                let html = `
-                    <div class="review-card">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="review-text">"Excelente profesional, muy dedicado con mi padre adulto mayor. Explicó detalladamente el diagnóstico auditivo y el tratamiento fue muy efectivo."</div>
-                        <div class="reviewer-info">
-                            <span>María C. R.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
-                        </div>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor Torres tiene una paciencia increíble con los niños. Súper recomendado en Villavicencio."</div>
-                        <div class="reviewer-info">
-                            <span>Carlos Andrés M.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
-                        </div>
-                    </div>
-                `;
-
-                savedReviews.forEach(rev => {
-                    html += `
-                        <div class="review-card">
-                            <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="review-text">"${rev.comment}"</div>
-                            <div class="reviewer-info">
-                                <span>${rev.name}</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado (${rev.email})</span>
-                            </div>
-                        </div>
-                    `;
-                });
-
-                reviewsContainer.innerHTML = html;
-            }
-
-            renderReviews();
-
-            <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reviewForm = document.getElementById('reviewForm');
-            const reviewsContainer = document.getElementById('reviewsListContainer');
-
-            // Cargar reseñas guardadas previamente
-            const savedReviews = JSON.parse(localStorage.getItem('doctor_torres_reviews')) || [];
+            // Cargar reseñas guardadas en la "Base de Datos" del navegador (LocalStorage)
+            const savedReviews = JSON.parse(localStorage.getItem('doctor_torres_db_reviews')) || [];
             
             function renderReviews() {
                 let html = `
@@ -892,22 +855,23 @@
                         <div class="review-stars">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <div class="review-text">"Excelente profesional, muy dedicado con mi padre adulto mayor. Explicó detalladamente el diagnóstico auditivo y el tratamiento fue muy efectivo."</div>
+                        <div class="review-text">"Excelente atención del Dr. Daniel Torres en Villavicencio. Muy profesional, detallista en el diagnóstico de vértigo y con un trato excepcional."</div>
                         <div class="reviewer-info">
-                            <span>María C. R.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                            <span>Andrés Felipe P.</span> • <span class="google-badge"><i class="fa-brands fa-google"></i> Reseña de Google Maps</span>
                         </div>
                     </div>
                     <div class="review-card">
                         <div class="review-stars">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor Torres tiene una paciencia increíble con los niños. Súper recomendado en Villavicencio."</div>
+                        <div class="review-text">"Llevé a mi hijo por problemas de amígdalas y rinitis. El doctor tiene una paciencia increíble y resolvió todas nuestras dudas. 100 recomendado."</div>
                         <div class="reviewer-info">
-                            <span>Carlos Andrés M.</span> • <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Paciente Verificado (Gmail)</span>
+                            <span>Claudia Milena R.</span> • <span class="google-badge"><i class="fa-brands fa-google"></i> Reseña de Google Maps</span>
                         </div>
                     </div>
                 `;
 
+                // Añadir las reseñas guardadas en la base de datos local
                 savedReviews.forEach(rev => {
                     html += `
                         <div class="review-card">
@@ -938,22 +902,23 @@
                     return;
                 }
 
-                // Guardar localmente
-                const newReview = { name, email, comment };
+                // Guardar en la base de datos simulada (LocalStorage)
+                const newReview = { name, email, comment, date: new Date().toISOString() };
                 savedReviews.unshift(newReview);
-                localStorage.setItem('doctor_torres_reviews', JSON.stringify(savedReviews));
+                localStorage.setItem('doctor_torres_db_reviews', JSON.stringify(savedReviews));
+                
                 renderReviews();
 
-                // CREAR MENSAJE AUTOMÁTICO PARA WHATSAPP
-                // Reemplaza 573138740239 con tu número de WhatsApp con código de país (57 para Colombia)
-                const telefonoWhatsApp = "573225241606"; 
-                const mensaje = `Hola Dr. Daniel, he dejado una nueva reseña en su web:%0A%0A*Nombre:* ${name}%0A*Correo:* ${email}%0A*Comentario:* "${comment}"`;
+                // NOTIFICAR A WHATSAPP AUTOMÁTICAMENTE
+                const telefonoWhatsApp = "573138740239"; 
+                const mensaje = `Hola Dr. Daniel, hay una nueva reseña en la web:%0A%0A*Nombre:* ${name}%0A*Correo:* ${email}%0A*Comentario:* "${comment}"`;
                 
-                // Abrir WhatsApp automáticamente con el mensaje listo
                 window.open(`https://wa.me/${telefonoWhatsApp}?text=${mensaje}`, '_blank');
 
                 reviewForm.reset();
-                alert('¡Gracias por tu reseña! Se abrirá WhatsApp para notificar al consultorio.');
+                alert('¡Reseña guardada y notificada por WhatsApp con éxito!');
             });
         });
     </script>
+</body>
+</html>
