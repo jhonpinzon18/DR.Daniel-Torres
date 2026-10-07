@@ -1,14 +1,14 @@
 :root {
-    --color-deep-teal: #244d54;
-    --color-mint-pulse: #2ecea0;
-    --color-soft-teal: #6dddbd;
-    --color-carbon: #000000;
-    --color-ink: #151515;
-    --color-graphite: #4d4d4d;
-    --color-slate: #858585;
-    --color-fog: #999999;
-    --color-mist: #e5e7eb;
-    --color-bone: #f0f1f2;
+    --color-deep-teal: #0f2b5c; /* Azul Rey / Royal Blue */
+    --color-mint-pulse: #00bcd4; /* Azul Agua Marina / Aqua Marine */
+    --color-soft-teal: #38bdf8;
+    --color-carbon: #0f172a;
+    --color-ink: #1e293b;
+    --color-graphite: #475569;
+    --color-slate: #64748b;
+    --color-fog: #94a3b8;
+    --color-mist: #e2e8f0;
+    --color-bone: #f0fdf4;
     --color-paper: #ffffff;
     
     --font-inter-tight: 'Inter Tight', sans-serif;
@@ -161,7 +161,7 @@ nav a:hover {
 }
 
 .pill-btn-outline:hover {
-    background-color: rgba(46, 206, 160, 0.1);
+    background-color: rgba(0, 188, 212, 0.15);
 }
 
 .hero-light {
@@ -181,7 +181,7 @@ nav a:hover {
     border-radius: 20px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(36, 77, 84, 0.05);
+    box-shadow: 0 10px 30px rgba(15, 43, 92, 0.08);
 }
 
 .doctor-card-frame img {
@@ -286,49 +286,64 @@ section {
     color: var(--color-slate);
 }
 
-/* Services Grid */
+/* Servicios Especializados con Imágenes Reales */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
-.service-card {
-    background-color: var(--color-bone);
+.service-card-img {
+    background-color: var(--color-paper);
     border: 1px solid var(--color-mist);
     border-radius: 20px;
-    padding: 32px;
-    transition: transform 0.2s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
-.service-card:hover {
-    transform: translateY(-4px);
+.service-card-img:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(15, 43, 92, 0.1);
     border-color: var(--color-deep-teal);
 }
 
-.service-icon {
-    width: 48px;
-    height: 48px;
-    background-color: var(--color-deep-teal);
-    color: var(--color-mint-pulse);
-    border-radius: 50px;
+.service-img-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card-img:hover .service-img-container img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    padding: 28px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.service-card h4 {
+.service-content h4 {
     font-size: 20px;
-    font-weight: 500;
-    color: var(--color-ink);
-    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--color-deep-teal);
 }
 
-.service-card p {
+.service-content p {
     font-size: 15px;
     color: var(--color-graphite);
+    line-height: 1.6;
 }
 
 /* Location & Office Photos */
@@ -433,7 +448,7 @@ section {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    box-shadow: 0 20px 40px rgba(36, 77, 84, 0.2);
+    box-shadow: 0 20px 40px rgba(15, 43, 92, 0.15);
 }
 
 .doctoralia-text h3 {
@@ -461,7 +476,7 @@ section {
     border-radius: 50px;
     text-decoration: none;
     transition: opacity 0.2s;
-    box-shadow: 0 4px 14px rgba(46, 206, 160, 0.4);
+    box-shadow: 0 4px 14px rgba(0, 188, 212, 0.4);
 }
 
 .pill-btn-filled:hover {
@@ -613,4 +628,104 @@ footer p {
     nav ul {
         display: none;
     }
+}
+/* Contenedor de Tarjetas de Servicios con Giro 3D */
+.services-grid-flip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 260px;
+    perspective: 1000px; /* Da el efecto 3D al girar */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 1px solid var(--color-mist);
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/* Lado Frontal de la Tarjeta */
+.flip-card-front {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+}
+
+.flip-card-front .service-icon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--color-deep-teal);
+    color: var(--color-mint-pulse);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.flip-card-front h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-deep-teal);
+    margin-bottom: 8px;
+}
+
+.flip-hint {
+    font-size: 12px;
+    color: var(--color-slate);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+/* Lado Trasero de la Tarjeta (Descripción al girar) */
+.flip-card-back {
+    background-color: var(--color-deep-teal);
+    color: var(--color-paper);
+    transform: rotateY(180deg);
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flip-card-back h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-mint-pulse);
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    color: var(--color-bone);
+    line-height: 1.6;
 }
