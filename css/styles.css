@@ -729,3 +729,50 @@ footer p {
     color: var(--color-bone);
     line-height: 1.6;
 }
+/* Adaptación para Teléfonos Móviles y Pantallas Pequeñas */
+@media (max-width: 768px) {
+    /* Ocultar el menú de navegación de escritorio y ajustar el encabezado */
+    header {
+        padding: 0 16px;
+        height: 60px;
+    }
+    nav ul {
+        display: none; /* Puedes implementar un menú desplegable en el futuro si lo deseas */
+    }
+
+    /* Ajustar la sección Hero para que apile la foto y el texto verticalmente */
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-dark {
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-dark h1 {
+        font-size: 32px;
+    }
+
+    /* Hacer que las tarjetas de servicios 3D y cuadrículas ocupen todo el ancho */
+    .services-grid-flip, 
+    .about-grid, 
+    .location-grid, 
+    .reviews-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Ajustar contenedores y banners para que no se salgan de la pantalla */
+    .doctoralia-banner {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    section {
+        padding: 50px 16px;
+    }
+}
