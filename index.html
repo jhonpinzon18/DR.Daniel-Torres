@@ -37,15 +37,24 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero" style="max-width: 100%; padding: 0;">
+    <section id="inicio" class="hero" style="max-width: 1280px; margin: 0 auto; padding: 0;">
         <div class="hero-dark">
             <h1>Excelencia médica en salud auditiva, nasal y de garganta.</h1>
             <p>Atención integral y especializada para niños, adultos y adultos mayores con tecnología de vanguardia y un enfoque humano en Villavicencio.</p>
-            <a href="https://www.doctoralia.co/otorrinolaringologo/villavicencio" target="_blank" class="pill-btn-outline">Agendar en Doctoralia</a>
+            
+            <!-- Contenedor alineado y simétrico para los botones del Hero -->
+            <div style="display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 320px;">
+                <a href="https://www.doctoralia.co/otorrinolaringologo/villavicencio" target="_blank" class="pill-btn-outline" style="width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; padding: 14px 20px; border-radius: 50px; box-sizing: border-box;">
+                    Agendar en Doctoralia
+                </a>
+                <a href="https://wa.me/573138740239?text=Hola%20Dr.%20Daniel,%20deseo%20agendar%20una%20cita%20médica" target="_blank" class="pill-btn-whatsapp" style="width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; padding: 14px 20px; border-radius: 50px; box-sizing: border-box;">
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> Agendar por WhatsApp
+                </a>
+            </div>
         </div>
         <div class="hero-light">
             <div class="doctor-card-frame">
-                <img src="https://i.imgur.com/iaobRWh.jpg" alt="Dr. Daniel Andrés Torres López">
+                <img src="https://i.imgur.com/PovbC6z.jpg" alt="Dr. Daniel Andrés Torres López">
                 <div class="doctor-card-info">
                     <h3>Dr. Daniel Andrés Torres López</h3>
                     <p>Médico Otorrinolaringólogo</p>
@@ -82,9 +91,10 @@
                 </div>
             </div>
             <div>
-                <div class="clinic-photo" style="height: 380px; background: var(--color-deep-teal); color: var(--color-paper); justify-content: flex-end; align-items: flex-start; padding: 40px; background-image: linear-gradient(rgba(36,77,84,0.8), rgba(36,77,84,0.9)), url('https://i.imgur.com/iaobRWh.jpg'); background-size: cover; background-position: center;">
-                    <div style="background: rgba(0,0,0,0.6); padding: 16px 24px; border-radius: 12px; backdrop-filter: blur(4px);">
-                        <h4 style="color: var(--color-mint-pulse); font-size: 20px; margin-bottom: 4px;">Especialista Certificado</h4>
+                <div style="background: var(--color-paper); border: 1px solid var(--color-mist); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(15, 43, 92, 0.08);">
+                    <img src="https://i.imgur.com/XWZDFNx.jpg" alt="Dr. Daniel Andrés Torres López en Consultorio" style="width: 100%; height: 300px; object-fit: cover; display: block;">
+                    <div style="padding: 24px; background: var(--color-deep-teal); color: var(--color-paper); text-align: center;">
+                        <h4 style="color: var(--color-mint-pulse); font-size: 20px; margin-bottom: 6px;">Especialista Certificado</h4>
                         <p style="font-size: 14px; color: var(--color-bone);">Registro médico verificado y alta especialización en otorrinolaringología.</p>
                     </div>
                 </div>
@@ -92,55 +102,119 @@
         </div>
     </section>
 
-    <!-- Servicios Prestados -->
+    <!-- Servicios Especializados con Tarjetas Interactivas 3D -->
     <section id="servicios" style="background-color: var(--color-bone);">
         <div class="section-header">
             <h2>Servicios Especializados</h2>
             <p>Soluciones eficientes y diagnósticos precisos para pacientes pediátricos, adultos y adultos mayores.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-ear-deaf"></i></div>
-                <h4>Otología y Audición</h4>
-                <p>Diagnóstico y tratamiento de hipoacusia, infecciones de oído, vértigo, mareos y limpieza especializada.</p>
+        <div class="services-grid-flip">
+            
+            <!-- Servicio 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-ear-deaf"></i></div>
+                        <h4>Otología y Audición</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Otología y Audición</h4>
+                        <p>Diagnóstico y tratamiento de hipoacusia, infecciones de oído, vértigo, mareos y limpieza especializada.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-head-side-mask"></i></div>
-                <h4>Cirugía Nasal y Sinusal</h4>
-                <p>Tratamiento integral para rinitis alérgica, desviación septal, sinusitis crónica y cirugía endoscópica nasal.</p>
+
+            <!-- Servicio 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-head-side-mask"></i></div>
+                        <h4>Cirugía Nasal y Sinusal</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Cirugía Nasal y Sinusal</h4>
+                        <p>Tratamiento integral para rinitis alérgica, desviación septal, sinusitis crónica y cirugía endoscópica nasal.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-lungs"></i></div>
-                <h4>Ronquidos y Apnea del Sueño</h4>
-                <p>Estudio y soluciones efectivas para trastornos respiratorios durante el descanso nocturno.</p>
+
+            <!-- Servicio 3 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-lungs"></i></div>
+                        <h4>Ronquidos y Apnea del Sueño</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Ronquidos y Apnea del Sueño</h4>
+                        <p>Estudio y soluciones efectivas para trastornos respiratorios durante el descanso nocturno.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-child"></i></div>
-                <h4>Otorrinolaringología Pediátrica</h4>
-                <p>Atención especializada y paciente para amígdalas, adenoides, otitis infantiles y problemas respiratorios en niños.</p>
+
+            <!-- Servicio 4 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-child"></i></div>
+                        <h4>Otorrinolaringología Pediátrica</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Otorrinolaringología Pediátrica</h4>
+                        <p>Atención especializada y paciente para amígdalas, adenoides, otitis infantiles y problemas respiratorios en niños.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-microphone-lines"></i></div>
-                <h4>Laringología y Voz</h4>
-                <p>Evaluación de cuerdas vocales, ronquera persistente, disfonías y problemas de deglución.</p>
+
+            <!-- Servicio 5 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                        <h4>Laringología y Voz</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Laringología y Voz</h4>
+                        <p>Evaluación de cuerdas vocales, ronquera persistente, disfonías y problemas de deglución.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
-                <h4>Diagnóstico Geriátrico</h4>
-                <p>Cuidado especializado en la pérdida auditiva relacionada con la edad y patologías frecuentes en adultos mayores.</p>
+
+            <!-- Servicio 6 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                        <h4>Diagnóstico Geriátrico</h4>
+                        <span class="flip-hint">Pasa el cursor <i class="fa-solid fa-rotate"></i></span>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>Diagnóstico Geriátrico</h4>
+                        <p>Cuidado especializado en la pérdida auditiva relacionada con la edad y patologías frecuentes en adultos mayores.</p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
     <!-- Ubicación y Consultorio -->
-    <section id="ubicacion">
-        <div class="section-header">
-            <h2>Ubicación del Consultorio</h2>
-            <p>Instalaciones modernas y cómodas diseñadas para brindarle la mejor experiencia médica.</p>
+    <section id="ubicacion" style="position: relative; overflow: hidden; border-radius: 24px; max-width: 1240px; margin: 40px auto; padding: 80px 40px;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(15, 43, 92, 0.45), rgba(15, 43, 92, 0.55)), url('https://i.imgur.com/u67uJeo.jpg'); background-size: cover; background-position: center; filter: blur(1px); transform: scale(1.05); z-index: -1;"></div>
+
+        <div class="section-header" style="color: #ffffff; position: relative; z-index: 1;">
+            <h2 style="color: #ffffff;">Ubicación del Consultorio</h2>
+            <p style="color: var(--color-bone);">Instalaciones modernas y cómodas diseñadas para brindarle la mejor experiencia médica.</p>
         </div>
-        <div class="location-grid">
-            <div class="location-info">
-                <h3>Edificio Torre 33</h3>
+        
+        <div class="location-grid" style="position: relative; z-index: 1;">
+            <div class="location-info" style="background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                <h3 style="color: var(--color-deep-teal);">Edificio Torre 33</h3>
                 
                 <div class="location-detail-item">
                     <i class="fa-solid fa-location-dot"></i>
@@ -175,19 +249,19 @@
             </div>
 
             <div class="clinic-gallery">
-                <div class="clinic-photo">
+                <div class="clinic-photo" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
                     <i class="fa-solid fa-building-user"></i>
                     <span>Recepción y Sala de Espera</span>
                 </div>
-                <div class="clinic-photo">
+                <div class="clinic-photo" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
                     <i class="fa-solid fa-stethoscope"></i>
                     <span>Consultorio Equipado</span>
                 </div>
-                <div class="clinic-photo">
+                <div class="clinic-photo" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
                     <i class="fa-solid fa-hand-holding-medical"></i>
                     <span>Tecnología Diagnóstica</span>
                 </div>
-                <div class="clinic-photo">
+                <div class="clinic-photo" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);">
                     <i class="fa-solid fa-square-parking"></i>
                     <span>Fácil Acceso y Parqueadero</span>
                 </div>
@@ -197,7 +271,7 @@
 
     <!-- Agendamiento Doctoralia y WhatsApp -->
     <section id="citas">
-        <div class="doctoralia-banner">
+        <div class="doctoralia-banner" style="background-image: linear-gradient(rgba(15,43,92,0.9), rgba(15,43,92,0.95)), url('https://i.imgur.com/XWZDFNx.jpg'); background-size: cover; background-position: center;">
             <div class="doctoralia-text">
                 <h3>Agende su cita de forma rápida y segura</h3>
                 <p>Reserve su espacio directamente a través del perfil oficial en Doctoralia o escríbanos de inmediato a nuestro WhatsApp para coordinar su atención.</p>
