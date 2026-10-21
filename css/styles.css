@@ -784,3 +784,32 @@ html {
 .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
+html {
+    scroll-behavior: smooth;
+}
+
+/* Botón de agendamiento oculto en PC y visible en celulares */
+.mobile-cta {
+    display: none;
+    background-color: var(--color-mint-pulse);
+    color: var(--color-paper);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 50px;
+}
+
+/* Giro de tarjetas al tocarlas en celulares */
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 900px) {
+    .mobile-cta {
+        display: inline-block;
+    }
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+}
