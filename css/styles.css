@@ -776,3 +776,11 @@ footer p {
         padding: 50px 16px;
     }
 }
+html {
+    scroll-behavior: smooth;
+}
+
+/* Permite que las tarjetas giren al tocarlas en pantallas táctiles */
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
